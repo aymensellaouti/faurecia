@@ -24,6 +24,7 @@ import { TestPurePipeComponent } from './components/test-pure-pipe/test-pure-pip
 import { FiboPipe } from './pipes/fibo.pipe';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 import { LoggerService } from './services/logger.service';
+import { TodoComponent } from './todo/todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { LoggerService } from './services/logger.service';
     TestPurePipeComponent,
     FiboPipe,
     DefaultImagePipe,
+    TodoComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
