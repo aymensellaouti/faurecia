@@ -9,6 +9,7 @@ import { Cv } from '../model/cv';
 export class CvComponent {
   cvs: Cv[] = [];
   selectedCv: Cv | null = null;
+  date = new Date();
 
   constructor() {
     this.cvs = [
@@ -17,7 +18,7 @@ export class CvComponent {
         'aymen',
         'sellaouti',
         'teacher',
-        'rotating_card_profile2.png',
+        '',
         '1234',
         40
       ),

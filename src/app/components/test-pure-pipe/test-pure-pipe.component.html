@@ -1,0 +1,7 @@
+<input type="text" [(ngModel)]="message">
+{{message}}
+<ol>
+  <li *ngFor="let element of values">
+    {{element | fibo }}
+  </li>
+</ol>
