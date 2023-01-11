@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-
 @Component({
   selector: 'app-fils',
   templateUrl: './fils.component.html',

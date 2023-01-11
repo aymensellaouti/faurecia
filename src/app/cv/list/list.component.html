@@ -1,1 +1,8 @@
-<p>list works!</p>
+<ol class="list-group">
+  <li class="list-group-item">
+    <app-item (selectCv)="forwardCv.emit(cvs[0])" [cv]="cvs[0]"></app-item>
+  </li>
+  <li class="list-group-item">
+    <app-item (selectCv)="forwardCv.emit(cvs[1])" [cv]="cvs[1]"></app-item>
+  </li>
+</ol>
