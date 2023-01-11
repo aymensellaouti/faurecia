@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Cv } from '../model/cv';
-
+import { LoggerService } from '../../services/logger.service';
 @Component({
   selector: 'app-cv',
   templateUrl: './cv.component.html',
@@ -11,27 +11,12 @@ export class CvComponent {
   selectedCv: Cv | null = null;
   date = new Date();
 
-  constructor() {
+  constructor(private logger: LoggerService) {
     this.cvs = [
-      new Cv(
-        1,
-        'aymen',
-        'sellaouti',
-        'teacher',
-        '',
-        '1234',
-        40
-      ),
-      new Cv(
-        2,
-        'skander',
-        'sellaouti',
-        'enfant',
-        'rotating_card_profile3.png',
-        '1234',
-        4
-      ),
+      new Cv(1, 'aymen', 'sellaouti', 'teacher', 'as.jpg', '1234', 40),
+      new Cv(2, 'skander', 'sellaouti', 'enfant', '       ', '1234', 4),
     ];
+    this.logger.logger('je suis le cvComponent');
   }
 
   onForwardCv(cv: Cv) {

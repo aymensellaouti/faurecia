@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, InjectionToken } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -22,6 +22,8 @@ import { RainbowDirective } from './directives/rainbow.directive';
 import { Btc2usdPipe } from './pipes/btc2usd.pipe';
 import { TestPurePipeComponent } from './components/test-pure-pipe/test-pure-pipe.component';
 import { FiboPipe } from './pipes/fibo.pipe';
+import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
+import { LoggerService } from './services/logger.service';
 
 @NgModule({
   declarations: [
@@ -44,13 +46,11 @@ import { FiboPipe } from './pipes/fibo.pipe';
     RainbowDirective,
     Btc2usdPipe,
     TestPurePipeComponent,
-    FiboPipe
+    FiboPipe,
+    DefaultImagePipe,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

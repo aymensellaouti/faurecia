@@ -2,9 +2,9 @@
   <div class="col">
     <div class="alert alert-warning">
       {{date | date:'full' | uppercase}}
-      <pre>
+      <!--       <pre>
         {{1 | btc2usd}} / {{1 | btc2usd: false}} /
-      </pre>
+      </pre> -->
     </div>
     <app-list [cvs]="cvs" (forwardCv)="onForwardCv($event)"></app-list>
   </div>
