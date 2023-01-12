@@ -32,6 +32,7 @@ import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 
 
 
@@ -61,6 +62,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     TodoComponent,
     EmbaucheComponent,
     NavbarComponent,
+    DetailsCvComponent,
   ],
   imports: [
     BrowserModule,
