@@ -30,6 +30,8 @@ import { TestPurePipeComponent } from './components/test-pure-pipe/test-pure-pip
 import { FiboPipe } from './pipes/fibo.pipe';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 import { EmbaucheComponent } from './cv/embauche/embauche.component';
+import { AppRoutingModule } from './app-routing.module';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 
@@ -58,12 +60,14 @@ import { EmbaucheComponent } from './cv/embauche/embauche.component';
     DefaultImagePipe,
     TodoComponent,
     EmbaucheComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],
