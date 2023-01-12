@@ -36,6 +36,8 @@ import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 import { FrontComponent } from './templates/front/front.component';
 import { AdminComponent } from './templates/admin/admin.component';
 import { NF404Component } from './components/nf404/nf404.component';
+import { TestFormComponent } from './components/test-form/test-form.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -69,6 +71,8 @@ import { NF404Component } from './components/nf404/nf404.component';
     FrontComponent,
     AdminComponent,
     NF404Component,
+    TestFormComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
