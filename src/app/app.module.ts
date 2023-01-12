@@ -29,6 +29,7 @@ import { Btc2usdPipe } from './pipes/btc2usd.pipe';
 import { TestPurePipeComponent } from './components/test-pure-pipe/test-pure-pipe.component';
 import { FiboPipe } from './pipes/fibo.pipe';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
+import { EmbaucheComponent } from './cv/embauche/embauche.component';
 
 
 
@@ -56,6 +57,7 @@ import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
     FiboPipe,
     DefaultImagePipe,
     TodoComponent,
+    EmbaucheComponent,
   ],
   imports: [
     BrowserModule,
