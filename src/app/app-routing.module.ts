@@ -6,6 +6,7 @@ import { TodoComponent } from './todo/todo/todo.component';
 import { MiniWordComponent } from './directives/mini-word/mini-word.component';
 import { ColorComponent } from './components/color/color.component';
 import { SecondComponent } from './components/second.component';
+import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 
 const routes: Route[] = [
   /* cv */
@@ -14,6 +15,7 @@ const routes: Route[] = [
   { path: 'word', component: MiniWordComponent },
   { path: 'color/:defaultColor/:color', component: ColorComponent },
   { path: 'cv', component: CvComponent },
+  { path: 'cv/:id', component: DetailsCvComponent },
   { path: ':quelqueChose', component: SecondComponent },
 ];
 

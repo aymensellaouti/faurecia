@@ -28,9 +28,11 @@ export class ColorComponent implements OnInit {
   ngOnInit(): void {
     console.log('In ngOnInit', this.defaultColor);
     this.divColor = this.defaultColor;
-    this.activatedRoute.params.subscribe((donnes) => {
-      this.defaultColor = donnes['defaultColor'];
-    });
+    this.activatedRoute.params.subscribe(
+      (donnes) => {
+        this.defaultColor = donnes['defaultColor'];
+      }
+    )
   }
 
   changeColor(newColor: string) {
