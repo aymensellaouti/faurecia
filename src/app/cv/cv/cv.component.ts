@@ -11,7 +11,8 @@ import { CvService } from '../services/cv.service';
 })
 export class CvComponent {
   cvs: Cv[] = [];
-  selectedCv: Cv | null = null;
+  nbClickItem = 0;
+  /*   selectedCv: Cv | null = null; */
   date = new Date();
 
   constructor(
@@ -23,10 +24,6 @@ export class CvComponent {
     this.cvs = this.cvService.getCvs();
     this.logger.logger('je suis le cvComponent');
     this.toastr.info('Bienvenu dans notre CvTech');
-  }
-
-  onForwardCv(cv: Cv) {
-    this.selectedCv = cv;
-    this.todoService.logTodos();
+    this.cvService.selectCv$.subscribe(() => this.nbClickItem++);
   }
 }
