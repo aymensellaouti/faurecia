@@ -38,9 +38,10 @@ import { FrontComponent } from './templates/front/front.component';
 import { AdminComponent } from './templates/admin/admin.component';
 import { NF404Component } from './components/nf404/nf404.component';
 import { TestFormComponent } from './components/test-form/test-form.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 import { TestObservableComponent } from './components/test-observable/test-observable.component';
 import { TestHttpComponent } from './components/test-http/test-http.component';
+import { AddCvComponent } from './cv/add-cv/add-cv.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { TestHttpComponent } from './components/test-http/test-http.component';
     LoginComponent,
     TestObservableComponent,
     TestHttpComponent,
+    AddCvComponent,
   ],
   imports: [
     BrowserModule,

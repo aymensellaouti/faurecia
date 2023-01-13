@@ -10,7 +10,8 @@ import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 import { FrontComponent } from './templates/front/front.component';
 import { AdminComponent } from './templates/admin/admin.component';
 import { NF404Component } from './components/nf404/nf404.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './auth/login/login.component';
+import { AddCvComponent } from './cv/add-cv/add-cv.component';
 
 const routes: Route[] = [
   /* cv */
@@ -32,6 +33,7 @@ const routes: Route[] = [
     ],
   },
   { path: 'cv', component: CvComponent },
+  { path: 'cv/add', component: AddCvComponent },
   { path: 'cv/:id', component: DetailsCvComponent },
   { path: ':quelqueChose', component: SecondComponent },
   { path: '**', component: NF404Component },

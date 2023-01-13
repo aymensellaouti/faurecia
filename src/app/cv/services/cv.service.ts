@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Cv } from '../model/cv';
-import { Subject, distinctUntilChanged } from 'rxjs';
+import { Subject, distinctUntilChanged, Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { API } from '../../../config/api.config';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +17,7 @@ export class CvService {
    *
    */
   selectCv$ = this.selectCvSubject.asObservable().pipe(distinctUntilChanged());
-  constructor() {
+  constructor(private http: HttpClient) {
     this.cvs = [
       new Cv(1, 'aymen', 'sellaouti', 'teacher', 'as.jpg', '1234', 40),
       new Cv(2, 'skander', 'sellaouti', 'enfant', '       ', '1234', 4),
@@ -24,18 +26,54 @@ export class CvService {
 
   /**
    *
-   * Retourne la liste des cvs
+   * Retourne un liste fictive de cvs
    *
    * @returns CV[]
    *
    */
-  getCvs(): Cv[] {
+  getFakeCvs(): Cv[] {
     return this.cvs;
   }
 
   /**
    *
-   * Cherche un cv avec son id
+   * Retourne la liste des cvs de l'API
+   *
+   * @returns CV[]
+   *
+   */
+  getCvs(): Observable<Cv[]> {
+    return this.http.get<Cv[]>(API.cv);
+  }
+
+  /**
+   *
+   * supprime un cv par son id de l'API
+   *
+   * @param id: number
+   * @returns CV[]
+   *
+   */
+  deleteCvById(id: number): Observable<any> {
+    const headers = new HttpHeaders().set('Authorization', localStorage.getItem('token') ?? '');
+    return this.http.delete<any>(API.cv + id, {headers});
+  }
+
+  /**
+   *
+   * Retourne un cv par son id de l'API
+   *
+   * @param id: number
+   * @returns CV[]
+   *
+   */
+  getCvById(id: number): Observable<Cv> {
+    return this.http.get<Cv>(API.cv + id);
+  }
+
+  /**
+   *
+   * Cherche un cv avec son id dans lai liste fictive de cvs
    *
    * @param id
    * @returns Cv | null
