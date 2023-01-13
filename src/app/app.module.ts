@@ -2,6 +2,7 @@ import { NgModule, InjectionToken } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ToastrModule } from 'ngx-toastr';
 
@@ -39,8 +40,7 @@ import { NF404Component } from './components/nf404/nf404.component';
 import { TestFormComponent } from './components/test-form/test-form.component';
 import { LoginComponent } from './components/login/login.component';
 import { TestObservableComponent } from './components/test-observable/test-observable.component';
-
-
+import { TestHttpComponent } from './components/test-http/test-http.component';
 
 @NgModule({
   declarations: [
@@ -75,13 +75,15 @@ import { TestObservableComponent } from './components/test-observable/test-obser
     TestFormComponent,
     LoginComponent,
     TestObservableComponent,
+    TestHttpComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
