@@ -12,6 +12,7 @@ import { AdminComponent } from './templates/admin/admin.component';
 import { NF404Component } from './components/nf404/nf404.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AddCvComponent } from './cv/add-cv/add-cv.component';
+import { AuthGuard } from './auth/guards/auth.guard';
 
 const routes: Route[] = [
   /* cv */
@@ -33,7 +34,7 @@ const routes: Route[] = [
     ],
   },
   { path: 'cv', component: CvComponent },
-  { path: 'cv/add', component: AddCvComponent },
+  { path: 'cv/add', component: AddCvComponent, canActivate: [AuthGuard] },
   { path: 'cv/:id', component: DetailsCvComponent },
   { path: ':quelqueChose', component: SecondComponent },
   { path: '**', component: NF404Component },
