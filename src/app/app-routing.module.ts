@@ -1,23 +1,21 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Route } from '@angular/router';
-import { CvComponent } from './cv/cv/cv.component';
-import { FirstComponent } from './components/first/first.component';
+import { RouterModule, Route, PreloadAllModules } from '@angular/router';
 import { TodoComponent } from './todo/todo/todo.component';
 import { MiniWordComponent } from './directives/mini-word/mini-word.component';
 import { ColorComponent } from './components/color/color.component';
-import { SecondComponent } from './components/second.component';
-import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 import { FrontComponent } from './templates/front/front.component';
 import { AdminComponent } from './templates/admin/admin.component';
-import { NF404Component } from './components/nf404/nf404.component';
 import { LoginComponent } from './auth/login/login.component';
-import { AddCvComponent } from './cv/add-cv/add-cv.component';
-import { AuthGuard } from './auth/guards/auth.guard';
+import { NF404Component } from './components/nf404/nf404.component';
 
 const routes: Route[] = [
   /* cv */
-  { path: '', redirectTo: 'cv', pathMatch: 'full' },
+  /*   { path: '', redirectTo: 'cv', pathMatch: 'full' }, */
   { path: 'login', component: LoginComponent },
+  {
+    path: 'cv',
+    loadChildren: () => import('./cv/cv.module').then((m) => m.CvModule),
+  },
   {
     path: '',
     component: FrontComponent,
@@ -33,15 +31,14 @@ const routes: Route[] = [
       { path: 'color/:defaultColor/:color', component: ColorComponent },
     ],
   },
-  { path: 'cv', component: CvComponent },
-  { path: 'cv/add', component: AddCvComponent, canActivate: [AuthGuard] },
-  { path: 'cv/:id', component: DetailsCvComponent },
-  { path: ':quelqueChose', component: SecondComponent },
+  /*   { path: ':quelqueChose', component: SecondComponent }, */
   { path: '**', component: NF404Component },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
