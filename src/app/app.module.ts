@@ -42,6 +42,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { TestObservableComponent } from './components/test-observable/test-observable.component';
 import { TestHttpComponent } from './components/test-http/test-http.component';
 import { AddCvComponent } from './cv/add-cv/add-cv.component';
+import { AuthInterceptorProvider } from './auth/interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,7 @@ import { AddCvComponent } from './cv/add-cv/add-cv.component';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
